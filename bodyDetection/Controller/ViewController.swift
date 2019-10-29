@@ -60,9 +60,7 @@ class ViewController: UIViewController {
         
     let jointNames: [ARSkeleton.JointName] = [.root, .spine2, .spine3, .spine4, .spine5, .spine6, .spine7]
     let context = CIContext(options: nil)
-    
-    var showRobot = false
-    
+        
     var jointDots = [CAShapeLayer]()
     var jointProjections = [ARSkeleton.JointName: JointViewModel]()
     var estimationDots = [CAShapeLayer]()
@@ -70,12 +68,9 @@ class ViewController: UIViewController {
     
     var corePointsDistance = [ARSkeleton.JointName: CGFloat]()
     
-    let characterAnchor = AnchorEntity()
     let spheresAnchor = AnchorEntity()
     
     var bodyAnchor: ARBodyAnchor?
-    var character: BodyTrackedEntity?
-
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,25 +81,8 @@ class ViewController: UIViewController {
         guard ARWorldTrackingConfiguration.isSupported else {
             fatalError("This feature is only supported on devices with an A12 chip")
         }
-        arView.debugOptions = [.showAnchorGeometry, .showAnchorOrigins, .showWorldOrigin]
         
-        var cancellable: AnyCancellable? = nil
-        cancellable = Entity.loadBodyTrackedAsync(named: "character/robot").sink(
-            receiveCompletion: { completion in
-                if case let .failure(error) = completion {
-                    print("Error: Unable to load model: \(error.localizedDescription)")
-                }
-                cancellable?.cancel()
-        }, receiveValue: { (character: Entity) in
-            if let character = character as? BodyTrackedEntity {
-                // Scale the character to human size
-                character.scale = [1.0, 1.0, 1.0]
-                self.character = character
-                cancellable?.cancel()
-            } else {
-                print("Error: Unable to load model as BodyTrackedEntity")
-            }
-        })
+        // arView.debugOptions = [.showAnchorGeometry, .showAnchorOrigins, .showWorldOrigin]
     }
     
     func toggleCamera() {
@@ -161,8 +139,6 @@ class ViewController: UIViewController {
     func detectJoints() {
         let configuration = ARBodyTrackingConfiguration()
         arView.session.run(configuration)
-        
-        arView.scene.addAnchor(characterAnchor)
         arView.scene.addAnchor(spheresAnchor)
     }
     
@@ -376,17 +352,7 @@ extension ViewController: ARSessionDelegate {
     
     func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
         for anchor in anchors {
-            guard let bodyAnchor = anchor as? ARBodyAnchor else {continue}
-             let bodyPosition = simd_make_float3(bodyAnchor.transform.columns.3)
-             let bodyOrientation = Transform(matrix: bodyAnchor.transform).rotation
-             characterAnchor.position = bodyPosition
-             characterAnchor.orientation = bodyOrientation
-    
-             if let character = character, character.parent == nil {
-                 if showRobot {
-                     characterAnchor.addChild(character)
-                 }
-            }
+            guard let _ = anchor as? ARBodyAnchor else {continue}
             if sceneState == .trackingStart {
                     showAllJoints2D()
             }
