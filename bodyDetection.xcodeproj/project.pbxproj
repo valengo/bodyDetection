@@ -7,23 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6418F775235F4A8400CE2EAE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6418F774235F4A8400CE2EAE /* Extensions.swift */; };
+		6418F775235F4A8400CE2EAE /* UIKit+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6418F774235F4A8400CE2EAE /* UIKit+Extension.swift */; };
+		64853755236786B700C0FCAA /* CGPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64853754236786B700C0FCAA /* CGPoint+Extension.swift */; };
+		648537572367CDB500C0FCAA /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648537562367CDB500C0FCAA /* CGFloat+Extension.swift */; };
+		64C8C756235FE68A0099949C /* ARKit+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C8C755235FE68A0099949C /* ARKit+Extension.swift */; };
 		64EC6A52235F3E0C00CB6B59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EC6A51235F3E0C00CB6B59 /* AppDelegate.swift */; };
 		64EC6A54235F3E0C00CB6B59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EC6A53235F3E0C00CB6B59 /* ViewController.swift */; };
 		64EC6A59235F3E0C00CB6B59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64EC6A57235F3E0C00CB6B59 /* Main.storyboard */; };
 		64EC6A5B235F3E0E00CB6B59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64EC6A5A235F3E0E00CB6B59 /* Assets.xcassets */; };
 		64EC6A5E235F3E0E00CB6B59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64EC6A5C235F3E0E00CB6B59 /* LaunchScreen.storyboard */; };
+		64F5DD012363D062000F04CB /* character in Resources */ = {isa = PBXBuildFile; fileRef = 64F5DD002363D062000F04CB /* character */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6418F774235F4A8400CE2EAE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		64EC6A4E235F3E0C00CB6B59 /* bodyDetection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bodyDetection.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6418F774235F4A8400CE2EAE /* UIKit+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Extension.swift"; sourceTree = "<group>"; };
+		64853754236786B700C0FCAA /* CGPoint+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extension.swift"; sourceTree = "<group>"; };
+		648537562367CDB500C0FCAA /* CGFloat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
+		64C8C755235FE68A0099949C /* ARKit+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARKit+Extension.swift"; sourceTree = "<group>"; };
+		64EC6A4E235F3E0C00CB6B59 /* Body Detection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Body Detection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64EC6A51235F3E0C00CB6B59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64EC6A53235F3E0C00CB6B59 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		64EC6A58235F3E0C00CB6B59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		64EC6A5A235F3E0E00CB6B59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64EC6A5D235F3E0E00CB6B59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64EC6A5F235F3E0E00CB6B59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64F5DD002363D062000F04CB /* character */ = {isa = PBXFileReference; lastKnownFileType = folder; path = character; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,9 +48,37 @@
 		6418F773235F4A7200CE2EAE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				6418F774235F4A8400CE2EAE /* Extensions.swift */,
+				6418F774235F4A8400CE2EAE /* UIKit+Extension.swift */,
+				64C8C755235FE68A0099949C /* ARKit+Extension.swift */,
+				64853754236786B700C0FCAA /* CGPoint+Extension.swift */,
+				648537562367CDB500C0FCAA /* CGFloat+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		64C8C752235FE4790099949C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		64C8C753235FE4880099949C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				64EC6A5A235F3E0E00CB6B59 /* Assets.xcassets */,
+				64EC6A57235F3E0C00CB6B59 /* Main.storyboard */,
+				64EC6A5C235F3E0E00CB6B59 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		64C8C754235FE48E0099949C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				64EC6A53235F3E0C00CB6B59 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		64EC6A45235F3E0C00CB6B59 = {
@@ -56,7 +92,7 @@
 		64EC6A4F235F3E0C00CB6B59 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				64EC6A4E235F3E0C00CB6B59 /* bodyDetection.app */,
+				64EC6A4E235F3E0C00CB6B59 /* Body Detection.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,12 +100,12 @@
 		64EC6A50235F3E0C00CB6B59 /* bodyDetection */ = {
 			isa = PBXGroup;
 			children = (
+				64C8C752235FE4790099949C /* Model */,
+				64C8C753235FE4880099949C /* View */,
+				64F5DD002363D062000F04CB /* character */,
+				64C8C754235FE48E0099949C /* Controller */,
 				6418F773235F4A7200CE2EAE /* Extensions */,
 				64EC6A51235F3E0C00CB6B59 /* AppDelegate.swift */,
-				64EC6A53235F3E0C00CB6B59 /* ViewController.swift */,
-				64EC6A57235F3E0C00CB6B59 /* Main.storyboard */,
-				64EC6A5A235F3E0E00CB6B59 /* Assets.xcassets */,
-				64EC6A5C235F3E0E00CB6B59 /* LaunchScreen.storyboard */,
 				64EC6A5F235F3E0E00CB6B59 /* Info.plist */,
 			);
 			path = bodyDetection;
@@ -92,7 +128,7 @@
 			);
 			name = bodyDetection;
 			productName = bodyDetection;
-			productReference = 64EC6A4E235F3E0C00CB6B59 /* bodyDetection.app */;
+			productReference = 64EC6A4E235F3E0C00CB6B59 /* Body Detection.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -135,6 +171,7 @@
 			files = (
 				64EC6A5E235F3E0E00CB6B59 /* LaunchScreen.storyboard in Resources */,
 				64EC6A5B235F3E0E00CB6B59 /* Assets.xcassets in Resources */,
+				64F5DD012363D062000F04CB /* character in Resources */,
 				64EC6A59235F3E0C00CB6B59 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,8 +183,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64C8C756235FE68A0099949C /* ARKit+Extension.swift in Sources */,
 				64EC6A54235F3E0C00CB6B59 /* ViewController.swift in Sources */,
-				6418F775235F4A8400CE2EAE /* Extensions.swift in Sources */,
+				648537572367CDB500C0FCAA /* CGFloat+Extension.swift in Sources */,
+				6418F775235F4A8400CE2EAE /* UIKit+Extension.swift in Sources */,
+				64853755236786B700C0FCAA /* CGPoint+Extension.swift in Sources */,
 				64EC6A52235F3E0C00CB6B59 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,7 +340,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = andydeva.bodyDetection;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Body Detection";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -318,7 +358,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = andydeva.bodyDetection;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Body Detection";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
